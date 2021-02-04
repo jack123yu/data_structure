@@ -6,8 +6,11 @@ public class TestArraylist {
         arrayList.add(123);
         arrayList.add(321);
         arrayList.add(898);
-
-        arrayList.get(7);
+        arrayList.add(898);
+        arrayList.add(898);
+        arrayList.add(898);
+        arrayList.add(5,333898);
+        System.out.println(arrayList.get(5));
         System.out.println(arrayList);
 
     }

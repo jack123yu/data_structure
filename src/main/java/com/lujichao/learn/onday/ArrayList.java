@@ -1,8 +1,12 @@
 package com.lujichao.learn.onday;
 
+import java.util.Arrays;
+
 /**
  * 顺序表
+ *
  * 底层使用数组，长度可以动态变化
+ * java.util.Arraylist 长度每次增长50%
  */
 public class ArrayList implements List{
     private Object[] elementData;//底层是一个数组，目前长度还没有确定长度
@@ -53,12 +57,45 @@ public class ArrayList implements List{
 
     @Override
     public void add(int i, Object e) {
+        if (size==elementData.length){
+//            //新创建一个数组，长度是原数组的2倍
+//            Object[] newarray=new Object[elementData.length*2];
+//            //旧数据的数据拷贝到新数组
+//            for (int i = 0; i < size; i++) {
+//                newarray[i]=elementData[i];
+//            }
+//            //将elementData指向新数组
+//            elementData=newarray;
+            elementData = Arrays.copyOf(elementData, elementData.length * 2);
+
+        }
+        for (int j = size; j > i; j--) {
+            elementData[j]=elementData[j-1];
+        }
+        elementData[i] = e;
+        size++;
+
 
     }
 
     @Override
     public void add(Object e) {
-        elementData[size++]=e;
+        //如果长度超出，自动扩容
+        if (size==elementData.length){
+//            //新创建一个数组，长度是原数组的2倍
+//            Object[] newarray=new Object[elementData.length*2];
+//            //旧数据的数据拷贝到新数组
+//            for (int i = 0; i < size; i++) {
+//                newarray[i]=elementData[i];
+//            }
+//            //将elementData指向新数组
+//            elementData=newarray;
+            elementData = Arrays.copyOf(elementData, elementData.length * 2);
+
+        }else {
+            elementData[size++] = e;
+        }
+        System.out.println(elementData.length);
     }
 
     @Override
@@ -84,5 +121,10 @@ public class ArrayList implements List{
     @Override
     public Object replace(Object e) {
         return null;
+    }
+
+    @Override
+    public String toString() {
+        return Arrays.toString(elementData);
     }
 }
