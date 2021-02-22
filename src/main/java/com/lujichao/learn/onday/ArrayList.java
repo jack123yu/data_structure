@@ -8,7 +8,7 @@ import java.util.Arrays;
  * 底层使用数组，长度可以动态变化
  * java.util.Arraylist 长度每次增长50%
  */
-public class ArrayList implements List{
+public class ArrayList<I extends Number> implements List{
     private Object[] elementData;//底层是一个数组，目前长度还没有确定长度
     private int size;//不是数组分类了几个空间，而是元素的个数
 
@@ -122,6 +122,12 @@ public class ArrayList implements List{
     public Object replace(Object e) {
         return null;
     }
+
+    @Override
+    public Object reverse(Object e) {
+        return null;
+    }
+
 
     @Override
     public String toString() {

@@ -29,5 +29,7 @@ public interface List {
     public boolean remove(Object e);
     //替换线性表中序号为i的数据元素e，返回原数据元素
     public Object replace(Object e);
+    //反转列表
+    public Object reverse(Object e);
 
 }

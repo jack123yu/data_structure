@@ -2,7 +2,7 @@ package com.lujichao.learn.onday;
 
 public class TestArraylist {
     public static void main(String[] args) {
-        ArrayList arrayList = new ArrayList();
+        ArrayList<Number> arrayList = new ArrayList<Number>();
         arrayList.add(123);
         arrayList.add(321);
         arrayList.add(898);
